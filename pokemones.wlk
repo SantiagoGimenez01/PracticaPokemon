@@ -2,7 +2,7 @@ class Pokemon{
   const movimientos = []
   var vida
   const vidaMaxima
-  var property puedeMoverse = true
+  var property condicion
 
   method grositud() = vidaMaxima * movimientos.sum({movimiento => movimiento.poder()})
   method usar(movimiento){
@@ -14,7 +14,7 @@ class Pokemon{
   }
 
   method atacar(pokemon, movimiento){
-    if(pokemon.puedeMoverse() && self.tiene(movimiento)){
+    if(condicion.permiteMoverA(pokemon) && self.tiene(movimiento)){
       self.usar(movimiento)
     }
   }
